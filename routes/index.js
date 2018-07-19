@@ -11,7 +11,7 @@ router.get('/meetups', function (req, res) {
 });
 
 router.post('/meetups', function (req,res) {
-    Meetup.create(this.body)
+    Meetup.create(req.body)
         .then(meetups => res.json(meetups))
         .catch(err => res.status(500).json({error: err}));
 

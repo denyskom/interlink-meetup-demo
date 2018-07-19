@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 const DB_URL ='mongodb://localhost:27017/interlink-meetup';
 
-mongoose.connect(DB_URL, function (err) {
+mongoose.connect(DB_URL, { useNewUrlParser: true }, function (err) {
    if(err) {
        console.error('Mongo connection FAIL: ' + err);
    }  else {
