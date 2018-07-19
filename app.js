@@ -3,7 +3,7 @@ const router = require('./routes/');
 const app = express();
 const mongoose = require('mongoose');
 
-const DB_URL ='mongodb:localhost/interlink-meetup';
+const DB_URL ='mongodb://localhost:27017/interlink-meetup';
 
 mongoose.connect(DB_URL, function (err) {
    if(err) {
