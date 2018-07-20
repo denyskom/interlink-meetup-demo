@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-const meetups = require('./meetups');
-const guests = require('./guest');
+const restRouter = require('./rest-router');
+const controllers = require('../controllers');
 
-router.use(meetups);
-router.use(guests);
+for (let path in controllers) {
+    router.use(`/${path}`, restRouter(controllers[path]));
+}
 
 module.exports = router;
